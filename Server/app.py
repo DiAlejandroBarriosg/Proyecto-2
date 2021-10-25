@@ -2,6 +2,7 @@ from logging import debug
 from flask import Flask, json, request, jsonify
 from flask_cors import CORS
 from CRUD_Usuarios import CRUD_Usuario
+from datetime import datetime
 
 # Inicializar flask
 crud_usuarios = CRUD_Usuario()
@@ -76,6 +77,8 @@ def recuperarUsaurios():
 def reporteEdades():
     res = crud_usuarios.reporteEdades()
     return jsonify({"data": res, "mensaje": "OK"}), 200
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=4001)
