@@ -1,0 +1,40 @@
+{
+    "usuarios": [
+        {
+            "correo": "1@gmail.com",
+            "pwd": "1",
+            "nombre": "1",
+            "edad": 1
+        },
+        {
+            "correo": "2@gmail.com",
+            "pwd": "2",
+            "nombre": "2",
+            "edad": 2
+        },
+        {
+            "correo": "3@gmail.com",
+            "pwd": "3",
+            "nombre": "3",
+            "edad": 3
+        },
+        {
+            "correo": "4@gmail.com",
+            "pwd": "4",
+            "nombre": "4",
+            "edad": 4
+        },
+        {
+            "correo": "pedro@gmail.com",
+            "pwd": "pedro",
+            "nombre": "pedro",
+            "edad": 20
+        },
+        {
+            "correo": "6@gmail.com",
+            "pwd": "6",
+            "nombre": "6",
+            "edad": 4
+        }
+    ]
+}

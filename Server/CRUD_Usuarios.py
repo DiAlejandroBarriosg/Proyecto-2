@@ -9,9 +9,9 @@ class CRUD_Usuario:
     # CRUD => CREATE READ UPDATE DELETE
 
     # Crear un nuevo usuario
-    def createUsuario(self, correo, pwd, nombre):
+    def createUsuario(self, correo, pwd, nombre, edad):
         id = len(self.usuarios)
-        nuevo = Usuario(id, correo, pwd, nombre)
+        nuevo = Usuario(id, correo, pwd, nombre, edad)
         self.usuarios.append(nuevo)
         return id
 
@@ -34,12 +34,13 @@ class CRUD_Usuario:
         return usuarios_aux
 
     # Actualizar usuario
-    def updateUsuario(self, id, correo, pwd, nombre):
+    def updateUsuario(self, id, correo, pwd, nombre, edad):
         for usuario in self.usuarios:
             if usuario.id == id:
                 usuario.correo = correo
                 usuario.pwd = pwd
                 usuario.nombre = nombre
+                usuario.edad = edad
                 return usuario.dump()
         return None
 
@@ -59,3 +60,23 @@ class CRUD_Usuario:
                 return usuario.dump()
         return None
 
+    # Carga masiva
+    def cargaMasiva(self, usuarios_cm):
+        for usuario_cm in usuarios_cm:
+            self.createUsuario(usuario_cm['correo'], usuario_cm['pwd'], usuario_cm['nombre'], usuario_cm['edad'])
+        return "OK"
+
+    # Reporte edades
+    # {
+    #   "1 año": 21,
+    #    "2 años": 5,
+    # }
+
+    def reporteEdades(self):
+        edades = {}
+        for usuario in self.usuarios:
+            if str(usuario.edad) in edades:
+                edades[str(usuario.edad)] += 1
+            else: # No existe la edad en el diccionario
+                edades[str(usuario.edad)] = 1
+        return edades

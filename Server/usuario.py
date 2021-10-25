@@ -1,11 +1,12 @@
 class Usuario:
     
     # Constructor
-    def __init__(self, id, correo, pwd, nombre):
+    def __init__(self, id, correo, pwd, nombre, edad):
         self.id = id
         self.correo = correo
         self.pwd = pwd
         self.nombre = nombre
+        self.edad = edad
     
     # Métodos
     def saludar(self):
@@ -16,5 +17,6 @@ class Usuario:
             'id': self.id,
             'correo': self.correo,
             'pwd': self.pwd,
-            'nombre': self.nombre
+            'nombre': self.nombre,
+            'edad': self.edad
         }
