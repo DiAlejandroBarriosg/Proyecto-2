@@ -19,6 +19,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
 
 </head>
 
@@ -389,13 +391,26 @@
                             <!-- Ctrl + k + u -->
                             
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Gráfica de barras</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Exportar</div>
+                                            <a class="dropdown-item" onclick="exportarBarrasPDF()">PDF</a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-bar">
                                         <canvas id="myBarChart"></canvas>
                                     </div>
+
                                     <!--<hr>
                                      Styling for the bar chart can be found in the
                                     <code>/js/demo/chart-bar-demo.js</code> file. -->
@@ -408,9 +423,22 @@
                         <div class="col-xl-6 col-lg-6">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Gráfica de pie</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Exportar</div>
+                                            <a class="dropdown-item" onclick="exportarPiePDF()">PDF</a>
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-pie pt-4">
@@ -531,7 +559,9 @@
 
     <!-- <script src="js/demo/chart-bar-demo.js"></script> -->
     <script src="js/graficas/graficas.js"></script>
+    <script src="js/graficas/exportarPDF.js"></script>
     <script src="js/carga-masiva/cargamasiva.js"></script>
+
 
 </body>
 
