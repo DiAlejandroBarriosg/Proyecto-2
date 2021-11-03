@@ -4,33 +4,45 @@ const textGenero = document.getElementById('textGenero')
 const textNombreUsuario = document.getElementById('textNombreUsuario')
 const txtNombre = document.getElementById('txtNombre')
 
-async function Registrar(){
-    // `${nombre_variable}`
-    //alert(`${txtCorreo.value} ${txtPassword.value}`)
-    
-    const data = {"correo": txtCorreo.value, "pwd": txtPassword.value
-    , "nombre": txtNombre.value}
+async function crear(){
+    // value: Retorna el valor asociado a la etiqueta
+    let correo = document.getElementById("correo").value
+    let password = document.getElementById("password").value
+    let nombre = document.getElementById("nombre").value
+    let genero = document.getElementById("genero").value
+    let nombreusuario = document.getElementById("nombre_usuario").value
 
-    // Peticion a servidor con fetch
-    // await -> esperar a que la peticion se termine
-    const rawResponse = await fetch("http://127.0.0.1:4001/register", {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' }
+
+    /* 
+        await: es un operador que "espera" por una Promise.
+        Promise: es un valor que puede tardar un cierto tiempo en computarse.
+        fetch: forma nativa de JavaScript de poder realizar peticiones http, esta puede tener
+        varios parametros asociados 
+            -> method: tipo de metodo de la peticion http, si se omite por defecto es get
+            -> headers: estos son regularmente asociados con el tiepo de body que se esta enviando
+            -> body: cuerpo de la peticion
+        
+        JSON.stringify: convierte el objeto JSON en una notación de texto para su transmision en
+        la web
+    */
+    let peticion = await fetch("http://localhost:4001/usuario", {
+        method: "put",
+        headers: {"Content-Type": 'application/json'},
+        body: JSON.stringify({
+            correo: correo,
+            password: password,
+            nombre: nombre,
+            Genero: genero,
+            Nombre_usuario: nombreusuario
+        })
     })
+    let respuesta = await peticion.json()
+    alert(respuesta.mensaje)
 
+    document.getElementById("correo").value = ""
+    document.getElementById("password").value = ""
+    document.getElementById("nombre").value = ""
+    document.getElementById("genero").value = ""
+    document.getElementById("nombre_usuario").value = ""
 
-    // Convertir de STRING a JSON
-    const response = await rawResponse.json()
-
-
-    if (rawResponse.status == 200){
-        // localStorage para almacenar la informacion
-        localStorage.setItem("usuario", JSON.stringify(response.data))
-        alert(`Bienvenido ${response.data.nombre}`)
-        window.location.href = "index.html"
-    } else {
-        alert(`${response.mensaje}`)
-    }
-    
 }
