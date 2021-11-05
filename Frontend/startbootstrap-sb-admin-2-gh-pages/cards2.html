@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UBlog</title>
+    <title>SB Admin 2 - Cards</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 
 </head>
 
-<body id="page-top" onload="getPublicaciones()">
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -35,44 +35,28 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">UBlog <sup></sup></div>
+                <div class="sidebar-brand-text mx-3">UBlog Admin <sup></sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-          
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Opciones
+                Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                    aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Publicar</span>
-                </a>
-                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Ver:</h6>
-                        <a class="collapse-item" href="/Frontend/flask_blog-master/templates/edit.html">Editar publicaciones</a>
-                        <a class="collapse-item" href="">Eliminar publicación</a>
-                        <a class="collapse-item" href="/Frontend/flask_blog-master/templates/create.html">Crear publicación</a>
-                        <a class="collapse-item active" href="cards.html">Publicaciones</a>
-                    </div>
-                </div>
-            </li>
+            
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            
+           
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -83,12 +67,36 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Paginas</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Registro</a>
+                        
+                    </div>
+                </div>
+            </li>
 
             <!-- Nav Item - Charts -->
-            
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+
             <!-- Nav Item - Tables -->
-           
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -115,13 +123,46 @@
                     </button>
 
                     <!-- Topbar Search -->
-                   
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -282,7 +323,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Publicaciones</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Cards</h1>
                     </div>
 
                     <div class="row">
@@ -294,8 +335,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Publicacion con mas likes</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">99</div>
+                                                Earnings (Monthly)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -312,8 +353,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Usuario con mas publicaciones</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Diego B</div>
+                                                Earnings (Annual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -329,11 +370,11 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Usuarios online
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">60%</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -359,7 +400,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Usuarios offline</div>
+                                                Pending Requests</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -371,94 +412,79 @@
                         </div>
                     </div>
 
-                    <div id="publicaciones" class="row">
+                    <div class="row">
 
                         <div class="col-lg-6">
 
                             <!-- Default Card Example -->
-                            <!-- <div class="card mb-4">
+                            <div class="card mb-4">
                                 <div class="card-header">
-                                    Tarjeta prueba
+                                    Default Card Example
                                 </div>
                                 <div class="card-body">
                                     This card uses Bootstrap's default styling with no utility classes added. Global
                                     styles are the only things modifying the look and feel of this default card example.
                                 </div>
-                            </div> -->
-
-                            
-
-                              <div class="card mb-4">
-                                <iframe src="https://www.youtube.com/embed/2gO1v2GPMFk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="card-body">
-                                  <h5 class="card-title">Musica Barroco para estudiar</h5>
-                                  <p class="card-text">Diego B</p>
-                                  <p class="card-text">Musica</p>
-                                  <p class="card-text">Likes: 10</p>
-                                  <p class="card-text">Hace 5 minutos</p>
-                                  <a href="https://www.youtube.com/embed/2gO1v2GPMFk" class="btn btn-primary">Ver video</a>
-                                </div>
-                              </div>
+                            </div>
 
                             <!-- Basic Card Example -->
-                            <div class="card mb-4">
-                                <iframe src="https://www.youtube.com/embed/VnJoTzww24k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="card-body">
-                                  <h5 class="card-title">Improve Listening Skill</h5>
-                                  <p class="card-text">Marvin16</p>
-                                  <p class="card-text">Estudio</p>
-                                  <p class="card-text">Likes: 5</p>
-                                  <p class="card-text">Hace 10 minutos</p>
-                                  <a href="https://www.youtube.com/embed/VnJoTzww24k" class="btn btn-primary">Ver video</a>
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
                                 </div>
-                              </div>
+                                <div class="card-body">
+                                    The styling for this basic card example is created by using default Bootstrap
+                                    utility classes. By using utility classes, the style of the card component can be
+                                    easily modified with no need for any custom CSS!
+                                </div>
+                            </div>
+
+                        </div>
 
                         <div class="col-lg-6">
-                            <div class="card mb-4" style="width: 18rem;">
-                                <img class="card-img-top" src="https://www.caracteristicas.co/wp-content/uploads/2018/07/arte-renacentista-e1571802362634.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                  <h5 class="card-title">Arte renacentista</h5>
-                                  <p class="card-text">JavieP9</p>
-                                  <p class="card-text">Arte</p>
-                                  <p class="card-text">Likes: 16</p>
-                                  <p class="card-text">Hace 30 minutos</p>
-                                  <a href="https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59bbb29c5bafe878503c9872/husky-siberiano-bosque.jpg" class="btn btn-primary">Ver imagen</a>
-                                </div>
-                              </div>
-                        </div>
-                        
 
-                        <div class="col-lg-6">
-                            <div class="card mb-4" style="width: 18rem;">
-                                <img class="card-img-top" src="https://statics.memondo.com/p/99/ccs/2020/08/CC_2762574_1a728dc306e041f5a454417dfa2bec6c_meme_otros_para_vosotros_programadores.jpg?cb=342" alt="Card image cap">
-                                <div class="card-body">
-                                  <h5 class="card-title">Meme</h5>
-                                  <p class="card-text">DanielSantos222</p>
-                                  <p class="card-text">Humor</p>
-                                  <p class="card-text">Likes: 55</p>
-                                  <p class="card-text">Hace 1 hora</p>
-                                  <a href="https://statics.memondo.com/p/99/ccs/2020/08/CC_2762574_1a728dc306e041f5a454417dfa2bec6c_meme_otros_para_vosotros_programadores.jpg?cb=342" class="btn btn-primary">Ver imagen</a>
-                                </div>
-                              </div>
-                        </div>
-                                <!-- Card Body -->
-                                <div class="card mb-4">
-                                    <iframe src="https://www.youtube.com/embed/e8gaffa3Ca8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="card-body">
-                                      <h5 class="card-title">Tutorial MySQL</h5>
-                                      <p class="card-text">Diego B</p>
-                                      <p class="card-text">Programación</p>
-                                      <p class="card-text">Likes: 99</p>
-                                      <p class="card-text">Hace 1 día</p>
-                                      <a href="https://www.youtube.com/embed/e8gaffa3Ca8" class="btn btn-primary">Ver video</a>
+                            <!-- Dropdown Card Example -->
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
                                     </div>
-                                  </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    Dropdown menus can be placed in the card header in order to extend the functionality
+                                    of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                                    icon in the card header can be clicked on in order to toggle a dropdown menu.
+                                </div>
+                            </div>
 
-                           
+                            <!-- Collapsable Card Example -->
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Accordion -->
+                                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                                    role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                                </a>
                                 <!-- Card Content - Collapse -->
                                 <div class="collapse show" id="collapseCardExample">
                                     <div class="card-body">
-                                        
+                                        This is a collapsable card example using Bootstrap's built in collapse
+                                        functionality. <strong>Click on the card header</strong> to see the card body
+                                        collapse and expand!
                                     </div>
                                 </div>
                             </div>
@@ -515,15 +541,15 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="archivos/jquery/jquery.min.js"></script>
-    <script src="archivos/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="archivos/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    <script src="js/publicaciones/publicaciones.js"></script>
+
 </body>
 
 </html>

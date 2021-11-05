@@ -1,5 +1,7 @@
 const txtCorreo = document.getElementById('txtCorreo')
 const txtPassword = document.getElementById('txtPassword')
+let text = "admin@ipc1.com"
+let text2 = "admin@ipc1.com"
 
 async function login(){
     // `${nombre_variable}`
@@ -19,14 +21,18 @@ async function login(){
     // Convertir de STRING a JSON
     const response = await rawResponse.json()
 
-
-    if (rawResponse.status == 200){
+    if (txtCorreo.value == text && txtPassword.value == text2){
+        window.location.href = "charts.html"
+    }
+    else if (rawResponse.status == 200){
         // localStorage para almacenar la informacion
         localStorage.setItem("usuario", JSON.stringify(response.data))
         alert(`Bienvenido ${response.data.nombre}`)
-        window.location.href = "index.html"
-    } else {
-        alert(`${response.mensaje}`)
+        window.location.href = "cards.html"
+        
     }
+    else {
+            alert(`${response.mensaje}`)
+        }
     
 }
